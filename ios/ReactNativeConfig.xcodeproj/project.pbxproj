@@ -138,6 +138,7 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/ReactNativeConfig/BuildDotenvConfig.ruby",
 			);
 			outputPaths = (
 			);

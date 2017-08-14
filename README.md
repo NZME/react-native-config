@@ -103,9 +103,21 @@ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.grad
 
 Alternatively, you can set `ENVFILE` before building/running your app. For instance:
 
+On Mac
 ```
 $ ENVFILE=.env.staging react-native run-android
 ```
+
+On Windows (in cmd)
+```
+SET ENVFILE = '.env.staging' && react-native run-android
+```
+
+On Windows (in Powershell)
+```
+$env:ENVFILE=".env.staging"; react-native run-android
+```
+
 
 #### iOS
 
@@ -151,7 +163,7 @@ $ react-native link react-native-config
 * Go to your project -> Build Settings -> All
 * Search for "preprocess" 
 * Set `Preprocess Info.plist File` to `Yes`
-* Set `Info.plist Preprocessor Prefix File` to `${CONFIGURATION_BUILD_DIR}/GeneratedInfoPlistDotEnv.h`
+* Set `Info.plist Preprocessor Prefix File` to `${BUILD_DIR}/GeneratedInfoPlistDotEnv.h`
 * Set `Info.plist Other Preprocessor Flags` to `-traditional`
 * If you don't see those settings, verify that "All" is selected at the top (instead of "Basic")
 
